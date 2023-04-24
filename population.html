@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            console.log("DISPLAY ALL COUNTRY FLAG");
+            function reqListener() {
+                let data = JSON.parse(this.responseText)
+                for(a of data)
+                {
+                    console.log(a.name.common,a.region,a.subregion,a.population)
+                }
+}
+
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "https://restcountries.com/v3.1/all");
+req.send();
+
+        </script>
+    </body>
+</html>
